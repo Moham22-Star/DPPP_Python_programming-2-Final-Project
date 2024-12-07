@@ -1,0 +1,233 @@
+Year,Primary energy consumption (TWh),Electricity Generation (GWh),Technology
+1980,4.8252993,0.0,NA
+1981,5.6039824,0.0,NA
+1982,5.54307,0.0,NA
+1983,5.4212437,0.0,NA
+1984,5.6193357,0.0,NA
+1985,5.54307,0.0,NA
+1986,5.9150643,0.0,NA
+1987,4.3701386,0.0,NA
+1988,4.383528,0.0,NA
+1989,4.490098,0.0,NA
+1990,4.0684986,0.0,NA
+1991,2.4244936,0.0,NA
+1992,2.2531505,0.0,NA
+1993,2.3713613,0.0,NA
+1994,2.3713613,0.0,NA
+1995,2.3713613,0.0,NA
+1996,2.3778582,0.0,NA
+1997,2.3713613,0.0,NA
+1998,2.3713613,0.0,NA
+1999,2.3713622,0.0,NA
+2000,2.9661891,250.0,Oil
+2000,2.9661891,0.0,Solid biofuels
+2000,2.9661891,0.0,Geothermal energy
+2000,2.9661891,0.0,Renewable hydropower
+2000,2.9661891,0.0,Marine energy
+2000,2.9661891,0.0,Solar energy
+2000,2.9661891,0.0,Onshore wind energy
+2001,3.0154185,261.0,Oil
+2001,3.0154185,0.0,Solid biofuels
+2001,3.0154185,0.0,Geothermal energy
+2001,3.0154185,0.0,Renewable hydropower
+2001,3.0154185,0.0,Marine energy
+2001,3.0154185,0.0,Solar energy
+2001,3.0154185,0.0,Onshore wind energy
+2002,3.259806,274.0,Oil
+2002,3.259806,0.0,Solid biofuels
+2002,3.259806,0.0,Geothermal energy
+2002,3.259806,0.0,Renewable hydropower
+2002,3.259806,0.0,Marine energy
+2002,3.259806,0.0,Solar energy
+2002,3.259806,0.0,Onshore wind energy
+2003,3.259806,280.0,Oil
+2003,3.259806,0.0,Solid biofuels
+2003,3.259806,0.0,Geothermal energy
+2003,3.259806,0.0,Renewable hydropower
+2003,3.259806,0.0,Marine energy
+2003,3.259806,0.0,Solar energy
+2003,3.259806,0.0,Onshore wind energy
+2004,3.26211,280.0,Oil
+2004,3.26211,0.0,Solid biofuels
+2004,3.26211,0.0,Geothermal energy
+2004,3.26211,0.0,Renewable hydropower
+2004,3.26211,0.0,Marine energy
+2004,3.26211,0.0,Solar energy
+2004,3.26211,0.0,Onshore wind energy
+2005,3.2936735,290.0,Oil
+2005,3.2936735,0.0,Solid biofuels
+2005,3.2936735,0.0,Geothermal energy
+2005,3.2936735,0.0,Renewable hydropower
+2005,3.2936735,0.0,Marine energy
+2005,3.2936735,0.0,Solar energy
+2005,3.2936735,0.0,Onshore wind energy
+2006,3.3188102,300.0,Oil
+2006,3.3188102,0.0,Solid biofuels
+2006,3.3188102,0.0,Geothermal energy
+2006,3.3188102,0.0,Renewable hydropower
+2006,3.3188102,0.0,Marine energy
+2006,3.3188102,0.0,Solar energy
+2006,3.3188102,0.0,Onshore wind energy
+2007,3.3664858,311.0,Oil
+2007,3.3664858,0.0,Solid biofuels
+2007,3.3664858,0.0,Geothermal energy
+2007,3.3664858,0.0,Renewable hydropower
+2007,3.3664858,0.0,Marine energy
+2007,3.3664858,0.0,Solar energy
+2007,3.3664858,0.0,Onshore wind energy
+2008,3.3308442,324.0,Oil
+2008,3.3308442,0.0,Solid biofuels
+2008,3.3308442,0.0,Geothermal energy
+2008,3.3308442,0.0,Renewable hydropower
+2008,3.3308442,0.0,Marine energy
+2008,3.3308442,0.0,Solar energy
+2008,3.3308442,0.0,Solar photovoltaic
+2008,3.3308442,0.0,Onshore wind energy
+2009,3.3219945,327.0,Oil
+2009,3.3219945,0.0,Solid biofuels
+2009,3.3219945,0.0,Geothermal energy
+2009,3.3219945,0.0,Renewable hydropower
+2009,3.3219945,0.0,Marine energy
+2009,3.3219945,0.0,Solar energy
+2009,3.3219945,0.0,Solar photovoltaic
+2009,3.3219945,0.0,Onshore wind energy
+2010,3.405021,327.0,Oil
+2010,3.405021,0.0,Solid biofuels
+2010,3.405021,0.0,Geothermal energy
+2010,3.405021,0.0,Renewable hydropower
+2010,3.405021,0.0,Marine energy
+2010,3.405021,0.0,Solar energy
+2010,3.405021,0.0,Solar photovoltaic
+2010,3.405021,0.0,Onshore wind energy
+2011,3.405021,334.0,Oil
+2011,3.405021,0.0,Solid biofuels
+2011,3.405021,0.0,Geothermal energy
+2011,3.405021,0.0,Renewable hydropower
+2011,3.405021,0.0,Marine energy
+2011,3.405021,0.0,Solar energy
+2011,3.405021,0.0,Solar photovoltaic
+2011,3.405021,0.0,Onshore wind energy
+2012,3.4161766,340.0,Oil
+2012,3.4161766,0.0,Solid biofuels
+2012,3.4161766,0.0,Geothermal energy
+2012,3.4161766,0.0,Renewable hydropower
+2012,3.4161766,0.0,Marine energy
+2012,3.4161766,0.0,Solar energy
+2012,3.4161766,0.0,Solar photovoltaic
+2012,3.4161766,0.0,Onshore wind energy
+2012,3.4161766,4.0,Onshore wind energy
+2013,3.416206,350.0,Oil
+2013,3.416206,0.0,Solid biofuels
+2013,3.416206,0.0,Geothermal energy
+2013,3.416206,0.0,Renewable hydropower
+2013,3.416206,0.0,Marine energy
+2013,3.416206,0.0,Multiple renewables*
+2013,3.416206,0.0,Solar energy
+2013,3.416206,0.0,Solar photovoltaic
+2013,3.416206,0.0,Solar photovoltaic
+2013,3.416206,0.0,Onshore wind energy
+2013,3.416206,4.0,Onshore wind energy
+2014,3.416448,350.0,Oil
+2014,3.416448,0.0,Solid biofuels
+2014,3.416448,0.0,Geothermal energy
+2014,3.416448,0.0,Renewable hydropower
+2014,3.416448,0.0,Marine energy
+2014,3.416448,0.0,Solar energy
+2014,3.416448,0.2,Solar photovoltaic
+2014,3.416448,0.0,Onshore wind energy
+2014,3.416448,4.0,Onshore wind energy
+2015,3.5448291,350.0,Oil
+2015,3.5448291,0.0,Solid biofuels
+2015,3.5448291,0.0,Geothermal energy
+2015,3.5448291,0.0,Renewable hydropower
+2015,3.5448291,0.0,Marine energy
+2015,3.5448291,0.0,Solar energy
+2015,3.5448291,0.3,Solar photovoltaic
+2015,3.5448291,0.0,Solar photovoltaic
+2015,3.5448291,0.0,Onshore wind energy
+2015,3.5448291,5.0,Onshore wind energy
+2016,3.6269844,350.0,Oil
+2016,3.6269844,0.0,Solid biofuels
+2016,3.6269844,0.0,Geothermal energy
+2016,3.6269844,0.0,Renewable hydropower
+2016,3.6269844,0.0,Marine energy
+2016,3.6269844,0.0,Multiple renewables*
+2016,3.6269844,0.0,Solar energy
+2016,3.6269844,1.7,Solar photovoltaic
+2016,3.6269844,0.0,Solar photovoltaic
+2016,3.6269844,0.0,Solar photovoltaic
+2016,3.6269844,0.0,Solar photovoltaic
+2016,3.6269844,0.0,Solar photovoltaic
+2016,3.6269844,0.0,Onshore wind energy
+2016,3.6269844,5.0,Onshore wind energy
+2017,3.627606,350.0,Oil
+2017,3.627606,0.0,Solid biofuels
+2017,3.627606,0.0,Geothermal energy
+2017,3.627606,0.0,Renewable hydropower
+2017,3.627606,0.0,Marine energy
+2017,3.627606,0.0,Multiple renewables*
+2017,3.627606,0.0,Solar energy
+2017,3.627606,2.5,Solar photovoltaic
+2017,3.627606,0.0,Solar photovoltaic
+2017,3.627606,0.0,Solar photovoltaic
+2017,3.627606,0.0,Solar photovoltaic
+2017,3.627606,0.0,Onshore wind energy
+2017,3.627606,6.0,Onshore wind energy
+2018,3.6413927,350.0,Oil
+2018,3.6413927,0.0,Solid biofuels
+2018,3.6413927,0.0,Geothermal energy
+2018,3.6413927,0.0,Renewable hydropower
+2018,3.6413927,0.0,Marine energy
+2018,3.6413927,0.0,Multiple renewables*
+2018,3.6413927,0.0,Solar energy
+2018,3.6413927,3.5,Solar photovoltaic
+2018,3.6413927,0.0,Solar photovoltaic
+2018,3.6413927,0.0,Solar photovoltaic
+2018,3.6413927,0.0,Solar photovoltaic
+2018,3.6413927,0.0,Solar photovoltaic
+2018,3.6413927,0.0,Onshore wind energy
+2018,3.6413927,6.0,Onshore wind energy
+2019,3.6369123,350.0,Oil
+2019,3.6369123,0.0,Solid biofuels
+2019,3.6369123,0.0,Geothermal energy
+2019,3.6369123,0.0,Renewable hydropower
+2019,3.6369123,0.0,Marine energy
+2019,3.6369123,0.0,Multiple renewables*
+2019,3.6369123,0.0,Solar energy
+2019,3.6369123,0.0,Solar photovoltaic
+2019,3.6369123,3.8,Solar photovoltaic
+2019,3.6369123,0.0,Solar photovoltaic
+2019,3.6369123,0.0,Solar photovoltaic
+2019,3.6369123,0.0,Solar photovoltaic
+2019,3.6369123,0.0,Solar photovoltaic
+2019,3.6369123,0.0,Solar thermal energy
+2019,3.6369123,0.0,Onshore wind energy
+2019,3.6369123,6.0,Onshore wind energy
+2020,3.5074317,340.0,Oil
+2020,3.5074317,0.0,Solid biofuels
+2020,3.5074317,0.0,Geothermal energy
+2020,3.5074317,0.0,Renewable hydropower
+2020,3.5074317,0.0,Marine energy
+2020,3.5074317,0.0,Multiple renewables*
+2020,3.5074317,0.0,Solar energy
+2020,3.5074317,0.0,Solar photovoltaic
+2020,3.5074317,17.0,Solar photovoltaic
+2020,3.5074317,0.0,Solar photovoltaic
+2020,3.5074317,0.0,Solar photovoltaic
+2020,3.5074317,0.0,Solar photovoltaic
+2020,3.5074317,0.0,Onshore wind energy
+2020,3.5074317,6.0,Onshore wind energy
+2021,3.7102253,340.0,Oil
+2021,3.7102253,0.0,Solid biofuels
+2021,3.7102253,0.0,Geothermal energy
+2021,3.7102253,0.0,Renewable hydropower
+2021,3.7102253,0.0,Marine energy
+2021,3.7102253,0.0,Solar energy
+2021,3.7102253,0.0,Solar photovoltaic
+2021,3.7102253,29.5,Solar photovoltaic
+2021,3.7102253,0.0,Solar photovoltaic
+2021,3.7102253,0.0,Solar photovoltaic
+2021,3.7102253,0.0,Solar photovoltaic
+2021,3.7102253,0.0,Solar photovoltaic
+2021,3.7102253,0.0,Onshore wind energy
+2021,3.7102253,6.0,Onshore wind energy

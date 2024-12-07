@@ -1,0 +1,264 @@
+---
+title: "Somalia’s Energy Infrastructure: Challenges and Opportunities"
+authors: "Mohamed Mohamed"
+format: 
+  pdf:
+    fig-format: png
+    include-in-header: 
+       text: |
+         \usepackage{fvextra}
+         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+include-before-body:
+  text: |
+    \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+      showspaces = false,
+      showtabs = false,
+      breaksymbolleft={},
+      breaklines
+    }
+---
+Somalia’s energy infrastructure faces profound, multifaceted challenges that significantly
+hinder its development, sustainability, and accessibility. Decades of governance failures, market
+inefficiencies, socio-political instability, and technical limitations have left the country struggling
+to provide affordable, reliable electricity to its population. Addressing these barriers is critical for
+transitioning toward renewable energy solutions.
+
+At the core of Somalia’s energy crisis lies its national power grid collapse in the 1990s,
+which dismantled centralized energy governance and left a void filled by private operators using
+diesel(oil) powered microgrids. While these entities provide much needed services, their
+operations are costly, inefficient, and environmentally harmful. The absence of a unified energy
+policy or national grid has left rural regions underserved. Despite the 2023 electricity bill, the
+lack of comprehensive regulations has perpetuated inefficiencies, inconsistent service quality,
+and safety concerns, deterring investment.
+
+Electricity costs in Somalia are among the highest in Africa, with tariffs ranging from
+$0.50 to $1.25 per kWh, compared to $0.06 per kWh in neighboring Ethiopia. This disparity
+exacerbates economic inequality, making electricity unaffordable for most households and
+businesses. Somalia's reliance on diesel systems further restricts the adoption of renewable
+technologies like solar and wind. Weak institutions and poor contract enforcement increase
+transaction costs, discouraging private sector participation.
+
+Security concerns from terrorist organizations such as Al-Shabaab compound these
+challenges, targeting infrastructure projects and deterring investment. This security dynamic
+marginalizes rural areas, widening urban rural divides. In rural regions, where only 11% of the
+population has access to reliable electricity, this limits education, healthcare, and economic
+opportunities, perpetuating poverty and social disparities. For example, clinics cannot refrigerate
+vaccines or power essential medical equipment, undermining public health initiatives.
+
+
+
+```{python}
+#| echo: false
+# 1. Data wrangling 
+import pandas as pd
+
+# Loading the datasets
+primary_energy = pd.read_csv("C:/Users/mmmoh/DPPS Python/PSet/DPPP_Python_programming-2-Final-Project/primary-energy-cons.csv")
+electricity_generation = pd.read_csv("C:/Users/mmmoh/DPPS Python/PSet/DPPP_Python_programming-2-Final-Project/all-data.csv", encoding='latin1')  # Specify encoding
+
+# Filtering the data for Somalia
+primary_energy_somalia = primary_energy.query("Country == 'Somalia' and Year <= 2021")
+electricity_generation_somalia = electricity_generation.query("Country == 'Somalia' and Year <= 2021")
+
+
+#primary_energy_somalia.to_csv("primary_energy_somalia.csv", index=False)
+#electricity_generation_somalia.to_csv("electricity_generation_somalia.csv", index=False)
+
+```
+
+```{python}
+#| echo: false
+primary_energy_somalia = primary_energy_somalia[['Year', 'Primary energy consumption (TWh)']]
+electricity_generation_somalia = electricity_generation_somalia[['Year', 'Electricity Generation (GWh)', 'Technology']]
+
+# Putting togather the datasets with a full outer join
+merged_data = pd.merge(
+    primary_energy_somalia,
+    electricity_generation_somalia,
+    on="Year",
+    how="outer"
+)
+
+# Filtering the merged data
+merged_data = merged_data.query("Year <= 2021")
+
+# Handle missing data
+merged_data['Electricity Generation (GWh)'] = merged_data['Electricity Generation (GWh)'].fillna(0)
+merged_data.fillna('NA', inplace=True)  # Use 'NA' for all other missing values
+
+# Saving the merged dataset
+merged_data.to_csv("somalia_energy_with_technology.csv", index=False)
+```
+
+
+
+
+```{python}
+#| echo: false
+# 2. Plotting
+import altair as alt
+import pandas as pd
+
+# Loading merged dataset
+data = pd.read_csv("somalia_energy_with_technology.csv")
+
+# Ensuring numeric conversion for 'Electricity Generation (GWh)' and 'Primary energy consumption (TWh)'
+data['Electricity Generation (TWh)'] = data['Electricity Generation (GWh)'].apply(
+    lambda x: float(x) / 1000 if x != 'NA' else None
+)
+data['Primary energy consumption (TWh)'] = pd.to_numeric(data['Primary energy consumption (TWh)'], errors='coerce')
+
+# Creating variable 'Actual Electricity Generation (TWh)'
+data['Actual Electricity Generation (TWh)'] = data['Electricity Generation (TWh)'].apply(
+    lambda x: x if x != 0 else None
+)
+
+# Aggregating data by year
+aggregated_data = data.groupby('Year', as_index=False).agg({
+    'Primary energy consumption (TWh)': 'sum',
+    'Actual Electricity Generation (TWh)': 'sum'
+})
+
+# Saving the aggregated dataset
+aggregated_data.to_csv("somalia_aggregated_energy.csv", index=False)
+```
+
+**Statistic** below Fig. 1 is a comprehensive line plot analysis revealing a persistent gap between primary
+energy consumption and electricity generation in Somalia. This disparity highlights the critical
+need for scaling renewable energy technologies to address the growing consumption demands. 
+```{python}
+#| echo: false
+# Reshaping data
+import altair as alt
+import pandas as pd
+alt.renderers.enable('png')
+
+melted_data = pd.melt(aggregated_data, id_vars=['Year'], 
+    value_vars=['Primary energy consumption (TWh)', 'Actual Electricity Generation (TWh)'],
+    var_name='Metric', value_name='Value')
+
+# Creating line plot
+line_plot = alt.Chart(melted_data).mark_line().encode(
+    x=alt.X('Year:O', title='Year'),
+    y=alt.Y('Value:Q', title='Value (TWh)'),
+    color=alt.Color('Metric:N', title='Metric'),
+    tooltip=['Year', 'Metric', 'Value']
+).properties(
+    title='Somalia Aggregated Energy Metrics Over Time',
+    width=400,
+    height=200
+)
+line_plot
+```
+
+We can clearly see that in the late 20th century, energy generation and consumption were nearly
+non-existent as the country was undergoing a state of collapse, one of the worst civil wars. However, they
+have been steadily increased over the last two decades, demonstrating rising energy needs fueled by
+population growth and economic activities as things got back to normal after reconciliation in the late
+1990s and early 2000s. As things change, they have consistently lagged in meeting consumption
+demands, driven by reliance on expensive and inefficient diesel-powered systems.
+
+Also below Fig.2 analysis visualized in a bar chart, underscores the stagnation in electricity generation capacity.
+While oil dominated the energy mix during this period, incremental contributions from renewable
+technologies were observed toward the end of the timeline. However, these efforts fell short of
+significantly altering Somalia’s energy landscape due to technical, financial, and governance challenges.
+
+```{python}
+#| echo: false
+# Loadint merged dataset
+bar_data = pd.read_csv("somalia_energy_with_technology.csv")
+
+# Cleaning NA values in Technology column
+bar_data['Technology'] = bar_data['Technology'].fillna('Unknown')
+
+# Ensuring numeric conversion for 'Electricity Generation (GWh)'
+bar_data['Electricity Generation (TWh)'] = bar_data['Electricity Generation (GWh)'].apply(
+    lambda x: float(x) / 1000 if x != 'NA' else None
+)
+
+# Filtering data for years after 2000
+bar_data = bar_data[bar_data['Year'] >= 2000]
+
+# Aggregating data by year and technology
+aggregated_data = bar_data.groupby(['Year', 'Technology'], as_index=False).agg({
+    'Electricity Generation (TWh)': 'sum'
+})
+```
+
+```{python}
+#| echo: false
+# Reshaping data
+alt.renderers.enable('png')
+
+melted_data = pd.melt(aggregated_data, id_vars=['Year', 'Technology'], 
+    value_vars=['Electricity Generation (TWh)'],
+    var_name='Metric', value_name='Value')
+
+# Creating bar chart
+bar_chart = alt.Chart(melted_data).mark_bar().encode(
+    x=alt.X('Year:O', title="Year", axis=alt.Axis(labelAngle=-45)),
+    y=alt.Y('Value:Q', 
+            title="Electricity Generation (TWh)",
+            scale=alt.Scale(domain=[0, 0.40])),
+    color=alt.Color('Technology:N', 
+                   title="Technology",
+                   scale=alt.Scale(scheme='category20')),
+    tooltip=['Year', 'Technology', 'Value']
+).properties(
+    title='Electricity Generation by Technology in Somalia (2000-2021)',
+    width=400,
+    height=160
+)
+
+bar_chart
+```
+
+Despite these developments, the overall electricity generation remains relatively low, suggesting significant room for expansion in Somalia's power sector. The introduction of renewables represents an important step toward modernizing the country's energy infrastructure, though oil continues to be the backbone of electricity generation, so to fill the gap, Somalia relies on a neighboring country to buy electricity and oil-powered generation. It can focus on building a
+renewable energy adoption strategy, which has huge potential to bridge this gap. Somalia requires
+tailored, scalable solutions to address its specific constraints. Pilot renewable energy projects in stable
+regions can be testing grounds for larger-scale implementation. Community-driven initiatives can
+empower trusted local leaders to educate and advocate for renewable solutions, fostering trust
+and participation. Hybrid governance structures in Somalia, where the Federal Government
+secures international funding, set national energy policies and mediates disputes. State
+governments provide technical oversight and enforce environmental standards.
+
+Somalia must invest in training programs to build local expertise in solar and wind technologies,
+reducing dependence on foreign contractors. Partnerships with international organizations could
+enable knowledge transfer and establish local research centers focused on renewable
+technologies. Corruption undermines public trust and equitable energy distribution. Transparent
+measures, such as publishing project budgets and progress reports, combined with independent
+audits, can improve accountability and attract private investment.
+
+Financial incentives and subsidies for solar and wind energy projects can reduce initial costs,
+making these options more accessible for private operators and communities. Pilot renewable
+energy projects in regions with stable governance could demonstrate feasibility, providing
+blueprints for expansion into conflict-prone areas. Public awareness campaigns led by trusted
+local leaders can address misconceptions about renewable technologies, accelerating adoption.
+Transitioning from isolated microgrids to regional renewable hubs can lower costs, enhance
+efficiency, and promote equitable energy access.
+
+To refine policy recommendations, incorporate real-time data on energy usage, regional
+governance, and socio-economic impacts. Develop renewable energy models that can be scaled
+incrementally based on community feedback. Partner with international organizations to mitigate
+infrastructure sabotage risks, ensuring reliable energy access in conflict-prone regions. Explore
+cross-border energy projects with neighboring countries, leveraging Ethiopia's low electricity
+costs and renewable capacity.
+
+Somalia stands at a critical juncture in its energy transition. Somalia can address its energy crisis and foster long-term economic growth, social cohesion, and stability by leveraging communitydriven solutions, enhancing governance, and prioritizing renewable energy, investing in training for local expertise in solar and wind technologies is crucial to reduce reliance on foreign contractors. Transparency in project budgets and independent audits can enhance accountability and trust, attracting private investment. This approach aligns with global sustainable development goals and positions Somalia as a resilient model for energy reform.
+
+
+**References**
+
+UNDP Somalia. (2020). Renewable Energy for Water Supply in Somalia: Challenges and
+Opportunities. United Nations Development Programme
+
+Trade.gov. (n.d.). Somalia - Energy and Electricity. U.S. Department of Commerce. 
+https://www.trade.gov/country-commercial-guides/somalia-energy-and-electricity
+
+United Nations Development Programme (UNDP). (n.d.). Somalia Launches Ambitious Solar
+Minigrids Program to Increase Energy Access. United Nations Development Programme.
+https://www.undp.org/energy/press-releases/somalia-launches-ambitious-solarminigrids-program-increase-energy-access.
+
+"Our World in Data. (n.d.). Energy in Somalia.
+https://ourworldindata.org/energy/country/somalia."
+
